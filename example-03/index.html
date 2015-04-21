@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="vendor/codemirror/lib/codemirror.css">
+	<link rel="stylesheet" type="text/css" href="vendor/codemirror/theme/monokai.css">
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="vendor/font-awesome/css/font-awesome.min.css">
+</head>
+<body>
+  <div id="main-region"></div>
+  
+  <!-- dependencies from bower -->
+	<script src="vendor/underscore/underscore.js"></script>
+  <script src="vendor/react/react-with-addons.js"></script>
+  <script src="vendor/pouchdb/dist/pouchdb.js"></script>
+  <script src="vendor/keymaster/keymaster.js"></script>
+
+  <!-- codemirror -->
+  <script src="vendor/codemirror/lib/codemirror.js"></script>
+  <script src="vendor/codemirror/keymap/vim.js"></script>
+  <script src="vendor/codemirror/keymap/sublime.js"></script>
+  <script src="vendor/codemirror/keymap/emacs.js"></script>
+  <script src="vendor/codemirror/mode/css/css.js"></script>
+  <script src="vendor/codemirror/mode/xml/xml.js"></script>
+  <script src="vendor/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+  <script src="vendor/codemirror/mode/javascript/javascript.js"></script>
+  <script src="vendor/codemirror/mode/jade/jade.js"></script>
+  <script src="vendor/codemirror/mode/stylus/stylus.js"></script>
+  <script src="vendor/codemirror/mode/meta.js"></script>
+
+  <script type="text/javascript">
+    (function(){
+      var gui = require('nw.gui'),
+          fs  = require('fs'),
+          os  = require('os'),
+          process = require('process')
+
+      window.Native = {
+        mkdir: require('mkdirp'),
+        path: require('path'),
+        platform: process.platform,
+        fs: fs, 
+        gui: gui,
+        db: new PouchDB('stylish-app'),
+        write: fs.writeFileSync,
+        win: gui.Window.get(),
+        read: function(path){
+          return fs.readFileSync(path).toString()
+        }
+      }
+    })()
+  </script>
+  
+  <script src="lib/config.js"></script>
+  <script src="components/codemirror_editor.js"></script>
+  <script src="components/editor.js"></script>
+  <script src="components/editor_panel.js"></script>
+  <script src="components/preview_panel.js"></script>
+  <script src="components/live_editor.js"></script>
+
+  <script src="commands.js"></script>
+  <script src="menus.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

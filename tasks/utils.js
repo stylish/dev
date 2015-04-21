@@ -27,3 +27,7 @@ module.exports.replace = function (str, patterns) {
 module.exports.getBuildTarget = function () {
     return argv.target || 'development';
 };
+
+module.exports.getExample = function () {
+    return argv.example || './build';
+};

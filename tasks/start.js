@@ -48,7 +48,7 @@ var runGulpWatch = function () {
 };
 
 var runApp = function () {
-    var app = childProcess.spawn(nw.findpath(), ['./build']);
+    var app = childProcess.spawn(nw.findpath(), [utils.getExample()]);
 
     app.stdout.pipe(process.stdout);
     app.stderr.pipe(process.stderr);

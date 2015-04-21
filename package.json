@@ -17,6 +17,9 @@
     "postinstall": "cd ./app  &&  npm install",
     "build": "./node_modules/.bin/gulp build",
     "start": "node ./tasks/start",
+    "example:01": "node ./tasks/start --example=example-01",
+    "example:02": "node ./tasks/start --example=example-02",
+    "example:03": "node ./tasks/start --example=example-03",
     "test": "node ./tasks/start --target=test",
     "release": "./node_modules/.bin/gulp release --target=release"
   }

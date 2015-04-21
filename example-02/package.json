@@ -1,0 +1,9 @@
+{
+  "main": "test.html",
+  "name": "test",
+  "productName": "Soederpop NWJS",
+  "window":{
+    "show": true,
+    "toolbar": false
+  }
+}

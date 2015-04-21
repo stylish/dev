@@ -1,0 +1,17 @@
+{
+  "name": "Stylish",
+  "homepage": "https://stylish.io",
+  "main": "index.html",
+  "window": {
+    "title": "Stylish",
+		"toolbar": false,
+		"frame": true,
+		"min_width": 1000,
+		"min_height": 700,
+    "width": 1000,
+    "height": 700,
+		"resizable": true,
+		"show": false,
+		"position": "center"
+  }
+}

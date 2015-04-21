@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <script type="text/javascript">
+      var platform = require('process').platform
+
+      // Users of Desktop Apps expect to see application menus
+      // and common keybindings.  You don't get these automatically
+      // in node-webkit apps
+      //
+      // See: https://github.com/nwjs/nw.js/wiki/Window-menu
+      var gui = require('nw.gui'),
+          menuBar = new gui.Menu({type:"menubar"}),
+          win = gui.Window.get();
+      
+      if(platform === "darwin"){
+        menuBar.createMacBuiltin("My App")
+      }
+      
+      var custom = new gui.Menu()
+
+      custom.append(new gui.MenuItem({
+        label: "What up?",
+        click: function(){
+          alert("What's good baby?")
+        }
+      }))
+      
+      menuBar.append(new gui.MenuItem({
+        label: "Custom",
+        submenu: custom
+      }))
+
+      win.menu = menuBar
+    </script>
+  </head>
+  <body></body>
+</html>
+

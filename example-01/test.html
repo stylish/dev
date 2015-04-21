@@ -1,0 +1,14 @@
+<html>
+  <head>
+    <script type="text/javascript">
+      // Require Node.js Libraries and work server side
+      var home    = require('process').env.HOME,
+          folders = require('fs').readdirSync(home)
+          
+          document.write("<h1>Folders</h1>")
+          document.write(folders.join("<br/>"))
+    </script>
+  </head>
+  <body></body>
+</html>
+
