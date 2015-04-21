@@ -3,7 +3,7 @@
     codeMirror: {}
   }
 
-  Config.codeMirror.themes = _(Native.fs.readdirSync("src/app/vendor/codemirror/theme")).map(function(entry){
+  Config.codeMirror.themes = _(Native.fs.readdirSync("vendor/codemirror/theme")).map(function(entry){
     return(entry.replace(/.css$/,''))
   })
   

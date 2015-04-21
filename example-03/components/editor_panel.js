@@ -7,7 +7,7 @@
         styleMode: "css",
         folder: "default",
         saveTo: "preview.html",
-        templateContents: Native.read("src/app/templates/preview.tpl")
+        templateContents: Native.read("templates/preview.tpl")
       }
     },
     
